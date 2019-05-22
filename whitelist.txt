@@ -3,6 +3,7 @@ DMAX
 Figuya
 LoveLiveSIF
 MTV
+PokemonGO
 SevenTV
 SuperSmashBrosUltimateNews
 TVNow
