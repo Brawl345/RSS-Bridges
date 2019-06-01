@@ -7,6 +7,10 @@ class EscargotTodayBridge extends BridgeAbstract {
     const CACHE_TIMEOUT = 21600; // 21600 = 6h
     const DESCRIPTION = 'The latest news from Escargot Land (MSN server replacement).';
 
+    public function getIcon(){
+        return self::URI . 'static/favicon-32x32.png';
+    }
+
     public function collectData() {
         // Retrieve webpage
         $pageUrl = self::URI . 'etc/escargot-today';
