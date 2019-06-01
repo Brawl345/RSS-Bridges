@@ -1,5 +1,6 @@
 CemuReleases
 DMAX
+EscargotToday
 Figuya
 LoveLiveSIF
 MTV
