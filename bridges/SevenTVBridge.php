@@ -65,7 +65,7 @@ class SevenTVBridge extends BridgeAbstract {
         or returnServerError('Could not request 7TV: ' . $pageUrl);
         
         // Get show name
-        $showName = $html->find('span.format-header_title', 0)->plaintext;
+        $showName = trim($html->find('span.format-header_title', 0)->plaintext);
         $this->showName = $showName;
         $this->pageUrl = $pageUrl;
 
