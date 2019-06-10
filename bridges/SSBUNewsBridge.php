@@ -1,5 +1,5 @@
 <?php
-class SuperSmashBrosUltimateNewsBridge extends BridgeAbstract {
+class SSBUNewsBridge extends BridgeAbstract {
 
     const MAINTAINER = 'Brawl';
     const NAME = 'Super Smash Bros. Ultimate News';
