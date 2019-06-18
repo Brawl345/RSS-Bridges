@@ -18,9 +18,11 @@ class SevenTVBridge extends BridgeAbstract {
                 'type' => 'list',
                 'values' => array(
                     'SAT.1' => 'https://www.sat1.de/',
+                    'SAT.1 Gold' => 'https://www.sat1gold.de/',
                     'ProSieben' => 'https://www.prosieben.de/',
                     'ProSieben MAXX' => 'https://www.prosiebenmaxx.de/',
                     'Kabel Eins' => 'https://www.kabeleins.de/',
+                    'Kabel Eins Doku' => 'https://www.kabeleinsdoku.de/',
                     'SIXX' => 'https://www.sixx.de/'
                 ),
                 'defaultValue' => 'https://www.sat1.de/'
