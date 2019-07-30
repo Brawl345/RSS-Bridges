@@ -2,6 +2,7 @@ CemuReleases
 DMAX
 EscargotToday
 Figuya
+JapanTimesFeatures
 LoveLiveSIF
 MTV
 PokemonGO
