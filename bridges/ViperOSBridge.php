@@ -4,7 +4,7 @@ class ViperOSBridge extends BridgeAbstract {
 	const MAINTAINER = 'Brawl';
 	const NAME = 'ViperOS';
 	const URI = 'https://viperos.org/';
-	const CACHE_TIMEOUT = 0; // 3600 = 1h
+	const CACHE_TIMEOUT = 3600; // 3600 = 1h
 	const DESCRIPTION = 'Get the newest ViperOS Android build.';
 	const PARAMETERS = array(
 		array(
