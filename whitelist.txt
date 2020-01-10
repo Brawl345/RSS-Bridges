@@ -1,3 +1,4 @@
+AnimeLoads
 CemuReleases
 DMAX
 EscargotToday
