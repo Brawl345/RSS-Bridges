@@ -97,6 +97,8 @@ class DMAXBridge extends BridgeAbstract
             }
             $article_content = trim($element['attributes']['description']);
 
+            $article_time = $element['attributes']['airDate'];
+
             // Store article in items array
             if (!empty($article_title)) {
                 $item = array();
@@ -104,6 +106,7 @@ class DMAXBridge extends BridgeAbstract
                 $item['title'] = $article_title;
                 $item['enclosures'] = array();
                 $item['content'] = $article_content;
+                $item['timestamp'] = $article_time;
                 $this->items[] = $item;
             }
         }
