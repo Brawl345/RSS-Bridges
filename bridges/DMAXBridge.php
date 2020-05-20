@@ -6,7 +6,7 @@ class DMAXBridge extends BridgeAbstract
     const MAINTAINER = 'Brawl';
     const NAME = 'DMAX';
     const URI = 'https://www.dmax.de/';
-    const CACHE_TIMEOUT = 0; // 3600 = 1h
+    const CACHE_TIMEOUT = 7200; // 7200 = 2h
     const DESCRIPTION = 'Returns the newest episode of a DMAX show.';
     const PARAMETERS = array(
         array(
