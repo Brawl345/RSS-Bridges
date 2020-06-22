@@ -107,6 +107,7 @@ class DMAXBridge extends BridgeAbstract
                 $item['enclosures'] = array();
                 $item['content'] = $article_content;
                 $item['timestamp'] = $article_time;
+                $item['uid'] = $article_title;
                 $this->items[] = $item;
             }
         }
