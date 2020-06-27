@@ -5,7 +5,7 @@ class TVNowBridge extends BridgeAbstract
     const MAINTAINER = 'Brawl';
     const NAME = 'TVNow';
     const URI = 'https://www.tvnow.de/';
-    const CACHE_TIMEOUT = 1; // 3600 = 1h
+    const CACHE_TIMEOUT = 3600; // 3600 = 1h
     const DESCRIPTION = 'Returns the latest episodes from TVNow.';
     const PARAMETERS = array(
         array(
