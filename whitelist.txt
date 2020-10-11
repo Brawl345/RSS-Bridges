@@ -3,6 +3,7 @@ CemuReleases
 DMAX
 EscargotToday
 Figuya
+GenshinImpact
 JapanTimesFeatures
 LoveLiveSIF
 MTV
