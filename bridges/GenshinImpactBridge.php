@@ -88,7 +88,6 @@ class GenshinImpactBridge extends BridgeAbstract
                 $item['title'] = $article_title;
                 $item['timestamp'] = $article_timestamp;
                 $item['content'] = $article_content;
-                $item['uid'] = $article_uid;
 
                 // Search for thumbnail
                 foreach ($element->ext as $ext) {
