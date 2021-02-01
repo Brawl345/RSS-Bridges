@@ -1,5 +1,6 @@
 <?php
-class SSBUNewsBridge extends BridgeAbstract {
+class SSBUNewsBridge extends BridgeAbstract
+{
 
     const MAINTAINER = 'Brawl';
     const NAME = 'Super Smash Bros. Ultimate News';
@@ -28,48 +29,52 @@ class SSBUNewsBridge extends BridgeAbstract {
             )
         )
     );
-    
+
     private $messagesString = '';
-    private $pageUrl = '';
-    
-    public function getName(){
-        if(!empty($this->messagesString)) {
+    private $pageUrl = 'https://www-aaaba-lp1-hac.cdn.nintendo.net/en-US/index.html';
+
+    public function getName()
+    {
+        if (!empty($this->messagesString)) {
             return $this->messagesString;
         }
 
         return parent::getName();
     }
-    
-    public function getIcon(){
+
+    public function getIcon()
+    {
         return 'https://www.smashbros.com/favicon.ico';
     }
-    
-    public function getURI(){
+
+    public function getURI()
+    {
         return $this->pageUrl;
     }
 
-    public function collectData() {
+    public function collectData()
+    {
         // Retrieve webpage
         $lang = $this->getInput('lang');
         $pageUrlBase = self::URI . $lang . '/';
         $pageUrl = $pageUrlBase . 'index.html';
         $html = getSimpleHTMLDOM($pageUrl)
             or returnServerError('Could not request webpage: ' . $pageUrl);
-        
+
         $this->messagesString = $html->find('title', 0)->plaintext . ' ' . $html->find('div.shrink-label', 0)->plaintext;
         $this->pageUrl = $pageUrl;
-        
-        // Process articles
-        foreach($html->find('li.article-item') as $element) {
 
-            if(count($this->items) >= 10) {
+        // Process articles
+        foreach ($html->find('li.article-item') as $element) {
+
+            if (count($this->items) >= 10) {
                 break;
             }
 
             $article_title = trim($element->find('h2', 0)->plaintext);
             $article_uri = $pageUrlBase . $element->find('a', 0)->href;
-            $article_thumbnail = $pageUrlBase . $element->find('img', 0)->src;
-            $article_content = '<a href="' . $article_uri . '"><img src="'. $article_thumbnail .'"></a>';
+            $article_thumbnail = $pageUrlBase . $element->find('img', 0)->{'data-lazy-src'};
+            $article_content = '<a href="' . $article_uri . '"><img src="' . $article_thumbnail . '"></a>';
             $article_timestamp = $element->attr['data-show-new-badge-published-at'];
 
             // Store article in items array
@@ -77,7 +82,7 @@ class SSBUNewsBridge extends BridgeAbstract {
                 $item = array();
                 $item['uri'] = $article_uri;
                 $item['title'] = $article_title;
-                $item['enclosures'] = array($article_thumbnail);
+                // $item['enclosures'] = array($article_thumbnail);
                 $item['content'] = $article_content;
                 $item['timestamp'] = $article_timestamp;
                 $this->items[] = $item;
